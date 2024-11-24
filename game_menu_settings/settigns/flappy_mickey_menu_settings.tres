@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GameMenuSettings" load_steps=4 format=3 uid="uid://cqab06pawh6md"]
+
+[ext_resource type="Texture2D" uid="uid://ckj3llgqf4qir" path="res://games/flappy-mickey/icon.svg" id="1_iih0y"]
+[ext_resource type="Script" path="res://game_menu_settings/game_menu_settings.gd" id="1_q6bb4"]
+[ext_resource type="PackedScene" uid="uid://ck5t70syhfvs2" path="res://games/flappy-mickey/game/game.tscn" id="2_dpihs"]
+
+[resource]
+script = ExtResource("1_q6bb4")
+launch_scene = ExtResource("2_dpihs")
+game_name = "Flappy Mickey"
+game_icon = ExtResource("1_iih0y")
+game_config = "res://games/flappy-mickey/config.cfg"

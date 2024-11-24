@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2r6jp2fvxhje"]
+
+[ext_resource type="Script" path="res://games/flappy-mickey/pipes/pipes.gd" id="1_ilyv3"]
+[ext_resource type="Texture2D" uid="uid://ckj3llgqf4qir" path="res://games/flappy-mickey/icon.svg" id="2_0m2e3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xeg1"]
+size = Vector2(113, 1453)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6d3my"]
+size = Vector2(44.75, 13807)
+
+[node name="PipeSection" type="Node2D"]
+process_mode = 1
+position = Vector2(-12, 349)
+scale = Vector2(0.34, 0.34)
+script = ExtResource("1_ilyv3")
+move_amount = 300.0
+randomize_amount = 250.0
+
+[node name="PipeTop" type="StaticBody2D" parent="."]
+position = Vector2(11.7647, -964.706)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeTop"]
+position = Vector2(3.5, 2.5)
+shape = SubResource("RectangleShape2D_5xeg1")
+
+[node name="Sprite2D" type="Sprite2D" parent="PipeTop"]
+scale = Vector2(1, 11.48)
+texture = ExtResource("2_0m2e3")
+
+[node name="PipeBottom" type="StaticBody2D" parent="."]
+position = Vector2(11.7647, 961.765)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeBottom"]
+position = Vector2(3.5, 2.5)
+shape = SubResource("RectangleShape2D_5xeg1")
+
+[node name="Sprite2D" type="Sprite2D" parent="PipeBottom"]
+scale = Vector2(1, 11.48)
+texture = ExtResource("2_0m2e3")
+
+[node name="ScoreZone" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreZone"]
+position = Vector2(32.3529, 5.88235)
+shape = SubResource("RectangleShape2D_6d3my")
+
+[connection signal="body_entered" from="ScoreZone" to="." method="_on_score_zone_body_entered"]
+[connection signal="body_exited" from="ScoreZone" to="." method="_on_score_zone_body_exited"]
