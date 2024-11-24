@@ -20,10 +20,7 @@ func load_game(game_launch_resource: GameMenuSettings):
 			match section:
 				"input":
 					InputMap.load_from_project_settings()
-	
-	
-	
-	
+					
 	
 	var scene = game_launch_resource.launch_scene.instantiate()
 	scene.game_exited.connect(on_game_exited)
