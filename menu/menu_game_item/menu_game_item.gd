@@ -1,6 +1,5 @@
 extends MarginContainer
 
-@export var label : Label
 @export var button : Button
 
 var game_resoure : GameMenuSettings
@@ -9,7 +8,7 @@ signal game_selected(game_launch_resource)
 
 
 func _ready() -> void:
-	label.text = game_resoure.game_name
+	button.text = game_resoure.game_name
 	button.icon = game_resoure.game_icon
 	
 

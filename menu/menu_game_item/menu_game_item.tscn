@@ -3,34 +3,26 @@
 [ext_resource type="Texture2D" uid="uid://pynnbu56a6q5" path="res://icon.svg" id="1_44mh4"]
 [ext_resource type="Script" path="res://menu/menu_game_item/menu_game_item.gd" id="1_o02wi"]
 
-[node name="MenuGameItem" type="MarginContainer" node_paths=PackedStringArray("label", "button")]
+[node name="MenuGameItem" type="MarginContainer" node_paths=PackedStringArray("button")]
+custom_minimum_size = Vector2(300, 0)
+offset_right = 500.0
+offset_bottom = 300.0
 script = ExtResource("1_o02wi")
-label = NodePath("VBoxContainer/MarginContainer/Label")
 button = NodePath("VBoxContainer/MarginContainer2/Button")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-text = "GAME"
-horizontal_alignment = 1
-
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="VBoxContainer/MarginContainer2"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-text = "Hrát"
+text = "Game"
 icon = ExtResource("1_44mh4")
 icon_alignment = 1
 vertical_icon_alignment = 0
+expand_icon = true
 
 [connection signal="pressed" from="VBoxContainer/MarginContainer2/Button" to="." method="_on_button_pressed"]

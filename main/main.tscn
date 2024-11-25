@@ -4,8 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://c2v7rn2q832n1" path="res://menu/menu.tscn" id="2_wytk8"]
 
 [node name="Main" type="Node"]
+process_mode = 3
 script = ExtResource("1_ew70g")
 
 [node name="Menu" parent="." instance=ExtResource("2_wytk8")]
+process_mode = 3
 
 [connection signal="game_selected" from="Menu" to="." method="_on_menu_game_selected"]
