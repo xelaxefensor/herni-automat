@@ -48,6 +48,7 @@ func _on_bird_pipe_cleared() -> void:
 
 # Resetuje hru
 func reset_game() -> void:
+	get_tree().paused = false
 	self.queue_free()
 	game_exited.emit()
 

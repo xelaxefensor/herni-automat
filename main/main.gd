@@ -29,4 +29,5 @@ func load_game(game_launch_resource: GameMenuSettings):
 
 func on_game_exited():
 	var scene = preload("res://menu/menu.tscn").instantiate()
+	scene.game_selected.connect(_on_menu_game_selected)
 	add_child(scene)
