@@ -19,3 +19,7 @@ func _on_score_zone_body_exited(body: Node2D) -> void:
 		body.pipe_cleared.emit()
 	# Pokud hráč(neboli těleso typu RigidBody2D, jelikož žádné jiné těleso Rigidody2D ve hře není), exitne zónu která určije projetí trubky,
 	# tak na hráči vyvolá signál pipe_cleared
+
+
+func _process(delta: float) -> void:
+	$ScoreZone.position.x = $PipeTop.position.x
