@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2r6jp2fvxhje"]
+[gd_scene load_steps=6 format=3 uid="uid://b2r6jp2fvxhje"]
 
 [ext_resource type="Script" path="res://games/flappy-mickey/pipes/pipes.gd" id="1_ilyv3"]
 [ext_resource type="Texture2D" uid="uid://ckj3llgqf4qir" path="res://games/flappy-mickey/icon.svg" id="2_0m2e3"]
+[ext_resource type="Script" path="res://games/flappy-mickey/pipes/pipe.gd" id="2_dmsvv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xeg1"]
-size = Vector2(113, 1453)
+size = Vector2(66.3676, 732)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6d3my"]
 size = Vector2(44.75, 13807)
@@ -12,35 +13,44 @@ size = Vector2(44.75, 13807)
 [node name="PipeSection" type="Node2D"]
 process_mode = 1
 position = Vector2(-12, 349)
-scale = Vector2(0.34, 0.34)
 script = ExtResource("1_ilyv3")
 move_amount = 300.0
-randomize_amount = 250.0
+randomize_amount = 150.0
 
-[node name="PipeTop" type="StaticBody2D" parent="."]
-position = Vector2(11.7647, -964.706)
+[node name="PipeTop" type="RigidBody2D" parent="."]
+position = Vector2(68, -317)
 collision_layer = 4
-collision_mask = 3
+collision_mask = 2
+gravity_scale = 0.0
+lock_rotation = true
+constant_torque = 10.0
+script = ExtResource("2_dmsvv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeTop"]
-position = Vector2(3.5, 2.5)
+position = Vector2(-45.1838, -149)
 shape = SubResource("RectangleShape2D_5xeg1")
 
 [node name="Sprite2D" type="Sprite2D" parent="PipeTop"]
-scale = Vector2(1, 11.48)
+position = Vector2(-45, -150.955)
+scale = Vector2(0.53125, 5.79758)
 texture = ExtResource("2_0m2e3")
 
-[node name="PipeBottom" type="StaticBody2D" parent="."]
-position = Vector2(11.7647, 961.765)
+[node name="PipeBottom" type="RigidBody2D" parent="."]
+position = Vector2(44, 755)
 collision_layer = 4
-collision_mask = 3
+collision_mask = 2
+gravity_scale = 0.0
+lock_rotation = true
+constant_torque = 10.0
+script = ExtResource("2_dmsvv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeBottom"]
-position = Vector2(3.5, 2.5)
+position = Vector2(-19, -281)
 shape = SubResource("RectangleShape2D_5xeg1")
 
 [node name="Sprite2D" type="Sprite2D" parent="PipeBottom"]
-scale = Vector2(1, 11.48)
+position = Vector2(-18.25, -281)
+scale = Vector2(0.503906, 5.73328)
 texture = ExtResource("2_0m2e3")
 
 [node name="ScoreZone" type="Area2D" parent="."]

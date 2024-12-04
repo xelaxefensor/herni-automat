@@ -9,14 +9,9 @@ extends Node2D
 func _ready() -> void:
 	var rng = RandomNumberGenerator.new()
 	position.y += rng.randf_range(-randomize_amount, randomize_amount) 
+	$PipeTop.move_amount = move_amount
+	$PipeBottom.move_amount = move_amount
 	#Při přidání objektu do scény(_ready funkce), ho následně posuneme na souřadnici y o rng číslo
-	
-
-# Volá se každý fyzický tick enginu(v základu nastaven na 60 ticků za sekundu)
-func _physics_process(delta: float) -> void:
-	translate(Vector2(-move_amount * delta, 0))
-	# Posune nodu o move_amount doleva, musíme vynásobit deltou kvůli nestabilitě frameratu
-	# Promněná delta udává čas,který uplynul od předchozího snímku
 
 
 func _on_score_zone_body_exited(body: Node2D) -> void:

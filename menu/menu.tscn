@@ -24,6 +24,7 @@ theme_override_constants/margin_bottom = 50
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
 layout_mode = 2
+follow_focus = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer"]
 layout_mode = 2

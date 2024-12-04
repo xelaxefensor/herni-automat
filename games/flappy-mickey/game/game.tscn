@@ -27,8 +27,8 @@ pipes_resource = ExtResource("4_a6oru")
 pipes_spawn_point = NodePath("PipesSpawnPoint")
 score_label = NodePath("HUD/MarginContainer/Score")
 timer = NodePath("PipesSpawnTimer")
-pipes_speed = 300.0
-pipes_speed_increment = 20.0
+pipes_speed = 250.0
+pipes_speed_increment = 1.0
 
 [node name="Level" parent="." instance=ExtResource("2_a8nuv")]
 process_mode = 1
